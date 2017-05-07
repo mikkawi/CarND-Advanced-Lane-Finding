@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.apronus.com/music/flashpiano.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Piano Keyboard Online | Apronus.com</title>
+<meta name="keywords" content="piano, online, keyboard, simulator, interactive, virtual, free">
+<meta name="description" content="play single notes or chords with computer keyboard or mouse (two octaves)">
+
+<meta property="og:title" content="Online Piano">
+<meta property="og:image" content="http://www.agnes-bruckner.com/apronus_images/facepiano.gif">
+<meta property="og:description" content="play single notes or chords with computer keyboard or mouse (two octaves)">
+<meta property="og:url" content="http://www.apronus.com/music/flashpiano.htm">
+<meta property="og:type" content="website">
+<meta property="fb:app_id" content="1575494549440277">
+
+<script src="./Piano Keyboard Online _ Apronus.com_files/ca-pub-5700139411406455.js"></script><script async="" src="./Piano Keyboard Online _ Apronus.com_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90959-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>(new Image()).src='http://www.apronus.com/stat.php?'+document.referrer;</script>
+
+<script async="" src="./Piano Keyboard Online _ Apronus.com_files/adsbygoogle.js"></script>
+
+<style>
+body { margin-left:10%; margin-right:10%; margin-bottom:4em; font-family: Verdana; }
+
+#struktura { margin:0; border-collapse: collapse; }
+
+nav { line-height: 2; }
+nav a { white-space: nowrap; }
+h2 { margin-top:2em; }
+table.keyboard
+{ border-width: 1px; border-collapse: collapse;
+  margin: 0;
+  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+}
+table.keyboard td { color:lightgray; }
+table td.b1  { background-color: white; border-left:1px solid black; border-top:1px solid black;
+               text-align:center; vertical-align:top; }
+table td.c1  { background-color: black; border-top:1px solid black; }
+table td.b2  { background-color: white; border-top:1px solid black;
+               text-align:center; vertical-align:top; }
+table td.b3  { background-color: white; border-right:1px solid black; border-top:1px solid black;
+               text-align:center; vertical-align:top; }
+table td.b25 { background-color: white; border-right:1px solid black; border-top:1px solid black;
+               text-align:center; vertical-align:top; }
+table td.b   { background-color: white;
+               color: gray; text-align:center; vertical-align:bottom;
+               border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; }
+
+div.smartkeys img { margin:0; width:3em; }
+div.smartkeys input { margin:0; margin-right:2em; }
+.chordkey { white-space: nowrap; }
+
+#pianoessence
+{
+}
+#reklama1
+{
+ width : 728px;
+ height: 90px;
+ margin: 2em;
+ box-shadow: 0 0 1em 0.5em #bbbbbb;
+ background-color: #bbbbbb;
+ margin-top: 0;
+}
+#cookies
+{
+ width : 728px;
+ font-weight: bold;
+ color: #555555;
+ margin-top: 2em;
+ text-align: center;
+}
+
+</style>
+
+<script>
+
+function keywaspressed(e)
+{
+ if (document.activeElement.nodeName == 'TEXTAREA') return;
+ if (document.activeElement.nodeName == 'INPUT') return;
+
+ e = e || event;
+ //document.title = e.keyCode;
+ var k = e.keyCode;
+ if (k==9)  { press(1); return false; } //tab
+ if (k==49) press(2); //1
+ if (k==81) press(3); //q
+ if (k==50) press(4); //2
+ if (k==87) press(5); //w
+ if (k==69) press(6); //e
+ if (k==52) press(7); //4
+ if (k==82) press(8); //r
+ if (k==53) press(9); //5
+ if (k==84) press(10); //t
+ if (k==54) press(11); //6
+ if (k==89) press(12); //y
+ if (k==85) press(13); //u
+ if (k==56) press(14); //8
+ if (k==73) press(15); //i
+ if (k==57) press(16); //9
+ if (k==79) press(17); //o
+ if (k==80) press(18); //p
+ if (k==189 || k==173) press(19); //-
+ if (k==219) press(20); //[
+ if (k==187 || k==61) press(21); //=
+ if (k==221) press(22); //]
+ if (k==8) { press(23); return false; } //backspace
+ if (k==13) press(24); //enter
+ if (k==220) press(25); //\
+
+ if (k==90) cdur(); //z
+ if (k==88) ddur(); //x
+ if (k==67) edur(); //c
+ if (k==86) fdur(); //v
+ if (k==66) gdur(); //b
+ if (k==78) adur(); //n
+ if (k==77) bdur(); //m
+ if (k==65) cmol(); //a
+ if (k==83) dmol(); //s
+ if (k==68) emol(); //d
+ if (k==70) fmol(); //f
+ if (k==71) gmol(); //g
+ if (k==72) amol(); //h
+ if (k==74) bmol(); //j
+
+ if (k==75) playchord('Kkey');
+ if (k==76) playchord('Lkey');
+ if (k==186 || k==59) { playchord('colon'); return false; }
+ if (k==222) { playchord('apostrof'); return false; }
+ if (k==188) { playchord('comma'); return false; }
+ if (k==190) { playchord('period'); return false; }
+ if (k==191) { playchord('slash'); return false; } // to prevent quickfind in firefox
+}
+
+function zagraj(x)
+{
+ var k;
+ if (x==1) k = document.getElementById('c');
+ if (x==2) k = document.getElementById('cis');
+ if (x==3) k = document.getElementById('d');
+ if (x==4) k = document.getElementById('es');
+ if (x==5) k = document.getElementById('e');
+ if (x==6) k = document.getElementById('f');
+ if (x==7) k = document.getElementById('fis');
+ if (x==8) k = document.getElementById('g');
+ if (x==9) k = document.getElementById('gis');
+ if (x==10) k = document.getElementById('a');
+ if (x==11) k = document.getElementById('b');
+ if (x==12) k = document.getElementById('h');
+
+ if (x==13) k = document.getElementById('c1');
+ if (x==14) k = document.getElementById('cis1');
+ if (x==15) k = document.getElementById('d1');
+ if (x==16) k = document.getElementById('es1');
+ if (x==17) k = document.getElementById('e1');
+ if (x==18) k = document.getElementById('f1');
+ if (x==19) k = document.getElementById('fis1');
+ if (x==20) k = document.getElementById('g1');
+ if (x==21) k = document.getElementById('gis1');
+ if (x==22) k = document.getElementById('a1');
+ if (x==23) k = document.getElementById('b1');
+ if (x==24) k = document.getElementById('h1');
+ if (x==25) k = document.getElementById('c2');
+
+ k.currentTime=0;
+ k.play(); 
+}
+
+function removeSelection() //to remove selection on the letters C D F G H A B marking the keys
+{
+   if (window.getSelection) {
+      if (window.getSelection().empty) {  // Chrome
+        window.getSelection().empty();
+      } else if (window.getSelection().removeAllRanges) {  // Firefox
+        window.getSelection().removeAllRanges();
+      }
+    } else if (document.selection) {  // IE?
+      document.selection.empty();
+    }
+}
+
+function selectkey(x)
+{
+ if (x==1 || x==3 || x==5 || x==6 || x==8 || x==10 || x==12 || x==13 || x==15 || x==17 || x==18 || x==20 || x==22 || x==24 || x==25)
+ {
+  var a = document.getElementById('bo'+x);
+  a.style.backgroundColor = 'lightgray';
+  a = document.getElementById('to'+x);
+  a.style.backgroundColor = 'lightgray';
+ }
+ else
+ {
+  var a = document.getElementById('l'+x);
+  a.style.backgroundColor = 'darkgray';
+  a = document.getElementById('r'+x);
+  a.style.backgroundColor = 'darkgray';
+ }
+}
+
+function press(x)
+{
+ removeSelection();
+ zagraj(x);
+ selectkey(x);
+ record(x);
+}
+
+function unselectkey(x)
+{
+ var a,b;
+ if (x==1 || x==3 || x==5 || x==6 || x==8 || x==10 || x==12 || x==13 || x==15 || x==17 || x==18 || x==20 || x==22 || x==24 || x==25)
+ {
+  a = document.getElementById('bo'+x);
+  b = document.getElementById('to'+x);
+  a.style.backgroundColor = 'white';
+  b.style.backgroundColor = 'white';
+ }
+ else
+ {
+  a = document.getElementById('l'+x);
+  a.style.backgroundColor = 'black';
+  a = document.getElementById('r'+x);
+  a.style.backgroundColor = 'black';
+ }
+}
+
+function unselectall()
+{
+ for (var x=1; x<=25; x++) unselectkey(x);
+}
+
+function cdur() { press(1); press(5); press(8); }
+function ddur() { press(3); press(7); press(10); }
+function edur() { press(5); press(9); press(12); }
+function fdur() { press(6); press(10); press(13); }
+function gdur() { press(8); press(12); press(15); }
+function adur() { press(10); press(14); press(17); }
+function bdur() { press(12); press(16); press(19); }
+function cmol() { press(1); press(4); press(8); }
+function dmol() { press(3); press(6); press(10); }
+function emol() { press(5); press(8); press(12); }
+function fmol() { press(6); press(9); press(13); }
+function gmol() { press(8); press(11); press(15); }
+function amol() { press(10); press(13); press(17); }
+function bmol() { press(12); press(15); press(19); }
+
+function record(x)
+{
+ var a = document.getElementById('Kkey');
+ if (a.checked) a.value += 'e'+x;
+ a = document.getElementById('Lkey');
+ if (a.checked) a.value += 'e'+x;
+ a = document.getElementById('colon');
+ if (a.checked) a.value += 'e'+x;
+ a = document.getElementById('apostrof');
+ if (a.checked) a.value += 'e'+x;
+ a = document.getElementById('comma');
+ if (a.checked) a.value += 'e'+x;
+ a = document.getElementById('period');
+ if (a.checked) a.value += 'e'+x;
+ a = document.getElementById('slash');
+ if (a.checked) a.value += 'e'+x;
+}
+
+function playchord(id)
+{
+ document.getElementById('Kkey').checked = false;
+ document.getElementById('Lkey').checked = false;
+ document.getElementById('colon').checked = false;
+ document.getElementById('apostrof').checked = false;
+ document.getElementById('comma').checked = false;
+ document.getElementById('period').checked = false;
+ document.getElementById('slash').checked = false;
+
+ var a = document.getElementById(id).value;
+ a = a.split('e');
+ var b = a.length;
+ for (var i=1; i<a.length; i++) press(a[i]);
+}
+
+function savechords()
+{
+ var a = '';
+ a += document.getElementById('Kkey').value + 'w';
+ a += document.getElementById('Lkey').value + 'w';
+ a += document.getElementById('colon').value + 'w';
+ a += document.getElementById('apostrof').value + 'w';
+ a += document.getElementById('comma').value + 'w';
+ a += document.getElementById('period').value + 'w';
+ a += document.getElementById('slash').value;
+ a = 'http://www.apronus.com/music/flashpiano.htm?a=' + a;
+ window.open(a);
+}
+
+function loadchords()
+{
+ var a = window.location.href;
+ var n = a.indexOf('?a=');
+ if (n == -1) return;
+ a = a.substring(n+3);
+ a = a.split('w');
+ document.getElementById('Kkey').value = a[0];
+ document.getElementById('Lkey').value = a[1];
+ document.getElementById('colon').value = a[2];
+ document.getElementById('apostrof').value = a[3];
+ document.getElementById('comma').value = a[4];
+ document.getElementById('period').value = a[5];
+ document.getElementById('slash').value = a[6];
+}
+
+var rozmiar = 2;
+
+function keyboardsize(x)
+{
+ if (x==0) x = 2;
+ rozmiar = x;
+ var a, unit = 'px';
+
+ a = document.getElementById('to1');
+ a.style.height = ''+100*x+unit;
+ a = document.getElementById('bo1');
+ a.style.height = ''+50*x+unit;
+
+ a = document.getElementById('to1');
+ a.style.width = ''+14*x+unit;
+ a = document.getElementById('l2');
+ a.style.width = ''+9*x+unit;
+ a = document.getElementById('r2');
+ a.style.width = ''+5*x+unit;
+ a = document.getElementById('to3');
+ a.style.width = ''+14*x+unit;
+ a = document.getElementById('l4');
+ a.style.width = ''+5*x+unit;
+ a = document.getElementById('r4');
+ a.style.width = ''+9*x+unit;
+ a = document.getElementById('to5');
+ a.style.width = ''+14*x+unit;
+ a = document.getElementById('to6');
+ a.style.width = ''+13*x+unit;
+ a = document.getElementById('l7');
+ a.style.width = ''+11*x+unit;
+ a = document.getElementById('r7');
+ a.style.width = ''+3*x+unit;
+ a = document.getElementById('to8');
+ a.style.width = ''+13*x+unit;
+ a = document.getElementById('l9');
+ a.style.width = ''+7*x+unit;
+ a = document.getElementById('r9');
+ a.style.width = ''+7*x+unit;
+ a = document.getElementById('to10');
+ a.style.width = ''+13*x+unit;
+ a = document.getElementById('l11');
+ a.style.width = ''+3*x+unit;
+ a = document.getElementById('r11');
+ a.style.width = ''+11*x+unit;
+ a = document.getElementById('to12');
+ a.style.width = ''+13*x+unit;
+
+ a = document.getElementById('to13');
+ a.style.width = ''+14*x+unit;
+ a = document.getElementById('l14');
+ a.style.width = ''+9*x+unit;
+ a = document.getElementById('r14');
+ a.style.width = ''+5*x+unit;
+ a = document.getElementById('to15');
+ a.style.width = ''+14*x+unit;
+ a = document.getElementById('l16');
+ a.style.width = ''+5*x+unit;
+ a = document.getElementById('r16');
+ a.style.width = ''+9*x+unit;
+ a = document.getElementById('to17');
+ a.style.width = ''+14*x+unit;
+ a = document.getElementById('to18');
+ a.style.width = ''+13*x+unit;
+ a = document.getElementById('l19');
+ a.style.width = ''+11*x+unit;
+ a = document.getElementById('r19');
+ a.style.width = ''+3*x+unit;
+ a = document.getElementById('to20');
+ a.style.width = ''+13*x+unit;
+ a = document.getElementById('l21');
+ a.style.width = ''+7*x+unit;
+ a = document.getElementById('r21');
+ a.style.width = ''+7*x+unit;
+ a = document.getElementById('to22');
+ a.style.width = ''+13*x+unit;
+ a = document.getElementById('l23');
+ a.style.width = ''+3*x+unit;
+ a = document.getElementById('r23');
+ a.style.width = ''+11*x+unit;
+ a = document.getElementById('to24');
+ a.style.width = ''+13*x+unit;
+
+ a = document.getElementById('to25');
+ a.style.width = ''+23*x+unit;
+}
+
+function larger()
+{
+ keyboardsize(rozmiar*1.1);
+}
+
+function smaller()
+{
+ keyboardsize(rozmiar/1.1);
+}
+
+function defaultsize()
+{
+ keyboardsize(0);
+}
+
+function popup()
+{
+ var pianotable = document.getElementById('pianotable');
+ var width = pianotable.clientWidth + 16;
+ var height = pianotable.clientHeight + 16 + 20;
+ var aa = window.open(null,'popup','location=no,toolbar=no,menubar=no,resizable=yes,scrollbars=no,status=no,height='+height+',width='+width);
+ //var aa = window.open();
+ aa.document.write('<html><head><title>Apronus Piano</title>');
+ aa.document.write('<'+'script src="popuppiano.js"></sc'+'ript>');
+ var st = document.getElementsByTagName('style')[0].innerHTML;
+ aa.document.write('<style>'+st+'</style>');
+ aa.document.write('<style>body { margin:8px; }</style>');
+ aa.document.write('</head>');
+ var bb = document.getElementById('pianoessence').innerHTML;
+ var body = "<body onkeyup='unselectall();'' >";
+ aa.document.write(body+bb+'</body>');
+ aa.document.write('<scr'+'ipt>document.body.onkeydown=keywaspressed;</scr'+'ipt>');
+ aa.document.write('<scri'+'pt>window.addEventListener("resize", resizepiano);</scr'+'ipt>');
+ aa.document.write('</html>');
+}
+
+</script>
+
+</head><body id="idbody" onkeyup="unselectall();" onload="loadchords();">
+<script>
+document.getElementById('idbody').onkeydown = keywaspressed;
+</script>
+
+<div id="strukturacontainer">
+<table id="struktura"><tbody><tr><td id="lewakolumna">
+
+<nav>
+<a href="http://www.apronus.com/">Apronus Home</a> |
+<a href="http://www.apronus.com/music/lessons/unit01.htm">Music Lessons</a> |
+<a href="http://www.apronus.com/music/onlineguitar.htm">Online Guitar</a>
+<button style="margin-left: 1em;" onclick="opennewpiano();">TEST THE NEW PIANO VERSION</button>
+<script>
+function opennewpiano()
+{
+ var width = 702 + 30;
+ var height = 300 + 320;
+ var script = "<script src='buttonpiano.js'></sc"+"ript>";
+ var style = '<style>body { margin: 15px; }</style>';
+ var piano = "<script>document.body.appendChild(panel(3,4));</scr"+"ipt>"; 
+ var popup = window.open(null,null,'width='+width+',height='+height);
+ popup.document.write("<!DOCTYPE html><html>");
+ popup.document.write("<head><title>PIANO</title>"+script+style+"</head><body>"+piano+"</body></html>"); 
+}
+</script>
+</nav>
+
+<header style="margin-bottom:1em;">
+<h1 style="margin-bottom:0; margin-top:0;">Piano Keyboard Online</h1>
+<div style="font-weight:bold; font-size:larger;">play single notes or chords with computer keyboard or mouse <!--(two&nbsp;octaves)--></div>
+</header>
+
+<div id="pianoessence">
+<audio preload="auto" id="c" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/c.mp3"></audio>
+<audio preload="auto" id="cis" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/cis.mp3"></audio>
+<audio preload="auto" id="d" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/d.mp3"></audio>
+<audio preload="auto" id="es" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/es.mp3"></audio>
+<audio preload="auto" id="e" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/e.mp3"></audio>
+<audio preload="auto" id="f" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/f.mp3"></audio>
+<audio preload="auto" id="fis" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/fis.mp3"></audio>
+<audio preload="auto" id="g" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/g.mp3"></audio>
+<audio preload="auto" id="gis" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/gis.mp3"></audio>
+<audio preload="auto" id="a" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/a.mp3"></audio>
+<audio preload="auto" id="b" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/b.mp3"></audio>
+<audio preload="auto" id="h" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/h.mp3"></audio>
+
+<audio preload="auto" id="c1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/c1.mp3"></audio>
+<audio preload="auto" id="cis1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/cis1.mp3"></audio>
+<audio preload="auto" id="d1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/d1.mp3"></audio>
+<audio preload="auto" id="es1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/es1.mp3"></audio>
+<audio preload="auto" id="e1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/e1.mp3"></audio>
+<audio preload="auto" id="f1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/f1.mp3"></audio>
+<audio preload="auto" id="fis1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/fis1.mp3"></audio>
+<audio preload="auto" id="g1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/g1.mp3"></audio>
+<audio preload="auto" id="gis1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/gis1.mp3"></audio>
+<audio preload="auto" id="a1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/a1.mp3"></audio>
+<audio preload="auto" id="b1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/b1.mp3"></audio>
+<audio preload="auto" id="h1" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/h1.mp3"></audio>
+
+<audio preload="auto" id="c2" src="http://www.agnes-bruckner.com/apronus_static/music-lessons/sounds/c2.mp3"></audio>
+
+<table id="pianotable" class="keyboard" onmouseup="unselectall();">
+<tbody><tr>
+<td id="to1" class="b1" onmousedown="press(1);" onmouseup="unselectkey(1);" style="height: 200px; width: 28px; background-color: white;"></td>
+<td id="l2" class="c1" onmousedown="press(2);" onmouseup="unselectkey(2);" style="width: 18px; background-color: black;"></td>
+<td id="r2" class="c1" onmousedown="press(2);" onmouseup="unselectkey(2);" style="width: 10px; background-color: black;"></td>
+<td id="to3" class="b2" onmousedown="press(3);" onmouseup="unselectkey(3);" style="width: 28px; background-color: white;">q</td>
+<td id="l4" class="c1" onmousedown="press(4);" onmouseup="unselectkey(4);" style="width: 10px; background-color: black;"></td>
+<td id="r4" class="c1" onmousedown="press(4);" onmouseup="unselectkey(4);" style="width: 18px; background-color: black;"></td>
+<td id="to5" class="b3" onmousedown="press(5);" onmouseup="unselectkey(5);" style="width: 28px; background-color: white;">w</td>
+
+<td id="to6" class="b1" onmousedown="press(6);" onmouseup="unselectkey(6);" style="width: 26px; background-color: white;">e</td>
+<td id="l7" class="c1" onmousedown="press(7);" onmouseup="unselectkey(7);" style="width: 22px; background-color: black;"></td>
+<td id="r7" class="c1" onmousedown="press(7);" onmouseup="unselectkey(7);" style="width: 6px; background-color: black;"></td>
+<td id="to8" class="b2" onmousedown="press(8);" onmouseup="unselectkey(8);" style="width: 26px; background-color: white;">r</td>
+<td id="l9" class="c1" onmousedown="press(9);" onmouseup="unselectkey(9);" style="width: 14px; background-color: black;"></td>
+<td id="r9" class="c1" onmousedown="press(9);" onmouseup="unselectkey(9);" style="width: 14px; background-color: black;"></td>
+<td id="to10" class="b2" onmousedown="press(10);" onmouseup="unselectkey(10);" style="width: 26px; background-color: white;">t</td>
+<td id="l11" class="c1" onmousedown="press(11);" onmouseup="unselectkey(11);" style="width: 6px; background-color: black;"></td>
+<td id="r11" class="c1" onmousedown="press(11);" onmouseup="unselectkey(11);" style="width: 22px; background-color: black;"></td>
+<td id="to12" class="b3" onmousedown="press(12);" onmouseup="unselectkey(12);" style="width: 26px; background-color: white;">y</td>
+
+<td id="to13" class="b1" onmousedown="press(13);" onmouseup="unselectkey(13);" style="width: 28px; background-color: white;">u</td>
+<td id="l14" class="c1" onmousedown="press(14);" onmouseup="unselectkey(14);" style="width: 18px; background-color: black;"></td>
+<td id="r14" class="c1" onmousedown="press(14);" onmouseup="unselectkey(14);" style="width: 10px; background-color: black;"></td>
+<td id="to15" class="b2" onmousedown="press(15);" onmouseup="unselectkey(15);" style="width: 28px; background-color: white;">i</td>
+<td id="l16" class="c1" onmousedown="press(16);" onmouseup="unselectkey(16);" style="width: 10px; background-color: black;"></td>
+<td id="r16" class="c1" onmousedown="press(16);" onmouseup="unselectkey(16);" style="width: 18px; background-color: black;"></td>
+<td id="to17" class="b3" onmousedown="press(17);" onmouseup="unselectkey(17);" style="width: 28px; background-color: white;">o</td>
+
+<td id="to18" class="b1" onmousedown="press(18);" onmouseup="unselectkey(18);" style="width: 26px; background-color: white;">p</td>
+<td id="l19" class="c1" onmousedown="press(19);" onmouseup="unselectkey(19);" style="width: 22px; background-color: black;"></td>
+<td id="r19" class="c1" onmousedown="press(19);" onmouseup="unselectkey(19);" style="width: 6px; background-color: black;"></td>
+<td id="to20" class="b2" onmousedown="press(20);" onmouseup="unselectkey(20);" style="width: 26px; background-color: white;">[</td>
+<td id="l21" class="c1" onmousedown="press(21);" onmouseup="unselectkey(21);" style="width: 14px; background-color: black;"></td>
+<td id="r21" class="c1" onmousedown="press(21);" onmouseup="unselectkey(21);" style="width: 14px; background-color: black;"></td>
+<td id="to22" class="b2" onmousedown="press(22);" onmouseup="unselectkey(22);" style="width: 26px; background-color: white;">]</td>
+<td id="l23" class="c1" onmousedown="press(23);" onmouseup="unselectkey(23);" style="width: 6px; background-color: black;"></td>
+<td id="r23" class="c1" onmousedown="press(23);" onmouseup="unselectkey(23);" style="width: 22px; background-color: black;"></td>
+<td id="to24" class="b3" onmousedown="press(24);" onmouseup="unselectkey(24);" style="width: 26px; background-color: white;"></td>
+
+<td id="to25" class="b25" onmousedown="press(25);" style="width: 46px; background-color: white;">\</td>
+</tr>
+<tr>
+<td id="bo1" class="b" colspan="2" onmousedown="press(1);" onmouseup="unselectkey(1);" style="height: 100px; background-color: white;">C</td>
+<td id="bo3" class="b" colspan="3" onmousedown="press(3);" onmouseup="unselectkey(3);" style="background-color: white;">D</td>
+<td id="bo5" class="b" colspan="2" onmousedown="press(5);" onmouseup="unselectkey(5);" style="background-color: white;">E</td>
+
+<td id="bo6" class="b" colspan="2" onmousedown="press(6);" onmouseup="unselectkey(6);" style="background-color: white;">F</td>
+<td id="bo8" class="b" colspan="3" onmousedown="press(8);" onmouseup="unselectkey(8);" style="background-color: white;">G</td>
+<td id="bo10" class="b" colspan="3" onmousedown="press(10);" onmouseup="unselectkey(10);" style="background-color: white;">A</td>
+<td id="bo12" class="b" colspan="2" onmousedown="press(12);" onmouseup="unselectkey(12);" style="background-color: white;">B</td>
+
+<td id="bo13" class="b" colspan="2" onmousedown="press(13);" onmouseup="unselectkey(13);" style="background-color: white;">C</td>
+<td id="bo15" class="b" colspan="3" onmousedown="press(15);" onmouseup="unselectkey(15);" style="background-color: white;">D</td>
+<td id="bo17" class="b" colspan="2" onmousedown="press(17);" onmouseup="unselectkey(17);" style="background-color: white;">E</td>
+
+<td id="bo18" class="b" colspan="2" onmousedown="press(18);" onmouseup="unselectkey(18);" style="background-color: white;">F</td>
+<td id="bo20" class="b" colspan="3" onmousedown="press(20);" onmouseup="unselectkey(20);" style="background-color: white;">G</td>
+<td id="bo22" class="b" colspan="3" onmousedown="press(22);" onmouseup="unselectkey(22);" style="background-color: white;">A</td>
+<td id="bo24" class="b" colspan="2" onmousedown="press(24);" onmouseup="unselectkey(24);" style="background-color: white;">B</td>
+
+<td id="bo25" class="b" onmousedown="press(25);" style="background-color: white;">C</td>
+</tr>
+</tbody></table>
+</div><!--pianoessence-->
+
+<script>
+keyboardsize(0);
+</script>
+
+
+<div id="cookies">Our cookies follow GoogleAdSense Policy.</div>
+<div id="reklama1">
+
+<!-- piano-2016-10-03 -->
+<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-5700139411406455" data-ad-slot="8676335215" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;" src="./Piano Keyboard Online _ Apronus.com_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+<div>
+
+<p>These keys can be configured to play any chord.
+Tick a checkbox to start recording.</p>
+
+<div class="smartkeys" onmouseup="unselectall();">
+<span class="chordkey">
+<img onmousedown="playchord(&quot;Kkey&quot;);" src="./Piano Keyboard Online _ Apronus.com_files/k.png" alt="K key to record any chord on the piano">
+<input type="checkbox" id="Kkey" value="" onchange="this.blur(); if (this.checked) this.value=&quot;&quot;;">
+</span><span class="chordkey">
+<img onmousedown="playchord(&quot;Lkey&quot;);" src="./Piano Keyboard Online _ Apronus.com_files/l.png" alt="L key to record any chord on the piano">
+<input type="checkbox" id="Lkey" value="" onchange="this.blur(); if (this.checked) this.value=&quot;&quot;;">
+</span><span class="chordkey">
+<img onmousedown="playchord(&quot;colon&quot;);" src="./Piano Keyboard Online _ Apronus.com_files/colon.jpg" alt="semicolon key to record any chord on the piano">
+<input type="checkbox" id="colon" value="" onchange="this.blur(); if (this.checked) this.value=&quot;&quot;;">
+</span><span class="chordkey">
+<img onmousedown="playchord(&quot;apostrof&quot;);" src="./Piano Keyboard Online _ Apronus.com_files/quote.jpg" alt="quote key to record any chord on the piano">
+<input type="checkbox" id="apostrof" value="" onchange="this.blur(); if (this.checked) this.value=&quot;&quot;;">
+</span> <span class="chordkey">
+<img onmousedown="playchord(&quot;comma&quot;);" src="./Piano Keyboard Online _ Apronus.com_files/comma.jpg" alt="comma key to record any chord on the piano">
+<input type="checkbox" id="comma" value="" onchange="this.blur(); if (this.checked) this.value=&quot;&quot;;">
+</span><span class="chordkey">
+<img onmousedown="playchord(&quot;period&quot;);" src="./Piano Keyboard Online _ Apronus.com_files/period.png" alt="period key to record any chord on the piano">
+<input type="checkbox" id="period" value="" onchange="this.blur(); if (this.checked) this.value=&quot;&quot;;">
+</span><span class="chordkey">
+<img onmousedown="playchord(&quot;slash&quot;);" src="./Piano Keyboard Online _ Apronus.com_files/slash.jpg" alt="slash key to record any chord on the piano">
+<input type="checkbox" id="slash" value="" onchange="this.blur(); if (this.checked) this.value=&quot;&quot;;">
+</span>
+<button onclick="savechords();" title="opens new window with your chords encoded in the URL of the page ready to be bookmarked">Save Chords</button>
+
+</div>
+
+
+<p>
+<button onclick="popup();">piano in new popup window</button>
+&nbsp;<b>keyboard size:</b>
+<button style="margin:0; margin-right:1em;" onclick="smaller();">smaller</button><button style="margin:0; margin-right:1em;" onclick="larger();">larger</button><button style="margin:0; margin-right:1em;" onclick="defaultsize();">default</button>
+</p>
+
+</div>
+
+</td> <!-- lewakolumna -->
+<td id="skyscraper" style="width: 0px;"></td>
+</tr></tbody></table></div>
+
+<script>
+var containerwidth = document.getElementById('strukturacontainer').clientWidth;
+var lewawidth = document.getElementById('lewakolumna').clientWidth;
+var prawawidth = containerwidth - lewawidth;
+if (prawawidth < 300)
+{
+ prawawidth = 0;
+ document.getElementById('skyscraper').innerHTML = '';
+}
+if (prawawidth > 320) prawawidth = 320;
+document.getElementById('skyscraper').style.width = prawawidth + 'px';
+</script>
+
+
+<h2>Use the computer keyboard to play the piano keyboard</h2>
+
+<p>Press keys on the computer keyboard or click on the keys of the piano keyboard
+to play this virtual interactive online piano simulator.</p>
+<p>
+Each key on the piano keyboard can be played by pressing an associated key on the computer keyboard.
+For example, the lowest C is played by pressing Tab while the adjacent C# is played by pressing 1 and the adjacent D sound is played by pressing Q and so on.
+Note that the highest C is played by pressing the backslash key, usually located near the Enter key, which itself plays the slightly lower B sounds.
+</p>
+
+<h2>Play any chords with the computer keyboard</h2>
+<p>
+The keys from Z to M play major chords while the keys from A to J play minor chords whose roots are the consecutive white keys.
+Moreover, you can assign user-defined chords to the listed seven keys of the computer keyboard.
+To record a chord simply tick a checkbox beside a key image and play the individual sounds of the chord on the keyboard.
+Untick the box to stop recording. From now on this key will play your chord.</p>
+
+<p>
+The seven user-defined chords can be saved for future reference.
+When you click the Save Chords button a new browser window will open with the chords encoded in the URL of the page.
+Then it can be bookmarked or the URL may be simply copied and pasted as a hyperlink.
+</p>
+
+<p>You might also be interested in another gadget — called
+<a href="http://apronus.com/music/onlineguitar.htm">online guitar</a> — that plays all the major, minor, and dominant sevenths chords.
+</p>
+
+
+<h2>This new piano keyboard design replaces the obsolote Flash version</h2>
+<p>
+This page replaces <a href="http://apronus.com/music/old-piano-keyboard-online.htm">an older version</a> of the virtual interactive online piano keyboard, which was written in Flash.
+If you prefer the sound of the older version you can still play it but nobody knows how long it will last because Flash is an obsolete technology nowadays.
+Note that online piano Java applets are practically defunct now.
+This new version is written in pure HTML5 and it does not need any plugins. Moreover, the screen size of the piano keyboard can be adjusted.
+</p>
+
+
+<h2>Feedback is welcome</h2>
+<p>
+The older Flash version was designed by a third-party and we could not modify it in any way.
+This time we can accommodate feedback from our users because we now have full control over the functionality of the gadget.
+We have the ambition to make it the most useful online piano keyboard in the world so we need to know what exactly our users expect.
+Please feel free to write any comments and remarks by using the email address displayed below as a graphical image to prevent spam.
+</p>
+<img src="./Piano Keyboard Online _ Apronus.com_files/apronus_email.gif" title="contact email as a graphical image" alt="contact email as a graphical image">
+
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=USFQTTFZ7WYJ4" target="_blank">please donate</a></p>
+
+<h2>Online Piano at Apronus.com Mailing List</h2>
+
+<p>Our subscribers will receive notifications whenever a new feature is added or a bug is fixed.</p>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup" style="margin-bottom: 2em;">
+<form action="http://apronus.us1.list-manage.com/subscribe/post?u=b18a9b063d011c00523610d50&amp;id=7ef61056aa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+	
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address </label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" style="width:20em;">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b18a9b063d011c00523610d50_7ef61056aa" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+
+</body></html>
